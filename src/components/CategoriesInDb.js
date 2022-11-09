@@ -2,10 +2,11 @@ import React from 'react';
 import AllCategories  from './AllCategories';
 
 function CategoriesInDb(){
-  const [categories, setCategories] = React.useState([]);
+  const [categoriesCount, setCategories] = React.useState([]);
   React.useEffect(() => {
-    //   let endpoint = 'http://localhost:3030/api/products';
-    let endpoint = 'https://grupo2-sprint8-api.herokuapp.com/api/products';
+
+    //let endpoint = 'https://grupo2-sprint8-api.herokuapp.com/api/products';
+    let endpoint = 'http://localhost:3030/api/products';
       fetch(endpoint)
       .then(response => response.json())
       .then(data => {
@@ -13,17 +14,17 @@ function CategoriesInDb(){
 /*               delete data.info.status;
               delete data.info.total;
               delete data.info.url; */
-              setCategories(data.meta.countByCategory);
+              setCategories(data?.respuesta?.meta?.countByCategory);
           }
       })
   },[])
 
-  let categoriesCount = [
+  /*let categoriesCount = [
       {nombre: 'Mesas', count: categories.Mesas},
       {nombre: 'Mesas Ratonas', count: categories.MesasRatonas},
       {nombre: 'Espejos', count: categories.Espejos},
       {nombre: 'Escritorios', count: categories.Escritorios},
-  ]
+  ]*/
 
   return (
       <React.Fragment>
@@ -37,7 +38,7 @@ function CategoriesInDb(){
                           <div className="row">
                               {
                                   categoriesCount.map((category,index)=>{
-                                      return  <AllCategories  {...category}  key={index} />
+                                  return  <AllCategories  {...category}  key={index} />
                                   })
                               }
                           </div>
