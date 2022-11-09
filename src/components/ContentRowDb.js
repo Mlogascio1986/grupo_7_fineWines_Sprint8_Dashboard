@@ -10,12 +10,13 @@ function ContentRowDb() {
 // Total Card Products
 const [products, setProducts] = React.useState([]);
 React.useEffect(() => {
-    let url = "https://grupo2-sprint8-api.herokuapp.com/api/products";
+    //let url = "https://grupo2-sprint8-api.herokuapp.com/api/products";
+    let url = 'http://localhost:3030/api/products';
     fetch(url)
     .then(response => response.json())
     .then(data => {
         if (!data.error){
-            setProducts(data.meta.count);
+            setProducts(data.respuesta.meta.count);
         }else{
             setProducts([]);
         }
@@ -34,18 +35,20 @@ let totalProducts = {
 // Total Card Users
 const [users, setUsers] = React.useState([]);
 React.useEffect(() => {
-    let url = "https://grupo2-sprint8-api.herokuapp.com/api/users";
+    //let url = "https://grupo2-sprint8-api.herokuapp.com/api/users";
+    let url = 'http://localhost:3030/api/users'
     fetch(url)
     .then(response => response.json())
     .then(data => {
         if (!data.error){
-            setUsers(data.meta.count);
+            setUsers(data.respuesta.meta.count);
         }else{
             setUsers([]);
         }
     })
     .catch(e => console.log(e));
 },[])
+
 let totalUsers = {
     color:  "success",
     title: "Total Usuarios",
@@ -57,12 +60,13 @@ let totalUsers = {
 // Total Card Categories
 const [categories, setCategories] = React.useState([]);
 React.useEffect(() => {
-    let url = "https://grupo2-sprint8-api.herokuapp.com/api/products";
+    //let url = "https://grupo2-sprint8-api.herokuapp.com/api/products";
+    let url = 'http://localhost:3030/api/products'
     fetch(url)
     .then(response => response.json())
     .then(data => {
         if (!data.error){
-            setCategories(Object.keys(data.meta.countByCategory).length
+            setCategories(Object.keys(data.respuesta.meta.countByCategory).length
             ); //Sum of the categories
         }else{
             setCategories([]);

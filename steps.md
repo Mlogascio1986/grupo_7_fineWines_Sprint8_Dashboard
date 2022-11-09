@@ -3,10 +3,12 @@
 Front End
 
 1. Panel de detalle del ultimo producto - listo
-2. Panel de categorias con el total de productos por cada una
-3. Panel con el listado de productos
-4. 3 paneles simples con los siguientes totales
-
+2. Panel de categorias con el total de productos por cada una - listo
+3. 3 paneles simples con los siguientes totales
+    - total de productos - listo
+    - total de categorias - listo
+    - total de usuarios -listo
+4. Panel con el listado de productos
 
 Back End - listo
 

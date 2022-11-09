@@ -1,5 +1,6 @@
 function ChartRow(props) {
-  let category
+  /*
+ let category
   switch (props.category) {
     case 1 : category  = 'Escritorio';
       break;
@@ -22,14 +23,14 @@ function ChartRow(props) {
       break;
     default : color = 'Sin categoria'
   }
+  bodega, varietal, precio, descuento y categoria
+  */
   return (
     <tr>
-      <td>{props.name}</td>
-      <td>{props.description}</td>
+      <td>{props.Bodega?.nameBodega}</td>
+      <td>{props.Varietal?.nameVarietal}</td>
       <td>${props.price}</td>
-      <td>{props.discount}%</td>
-      <td>{category}</td>
-      <td>{color}</td>
+      <td>{props.discount*100}%</td>
       {/* <td>
         <ul>
           {props.Categories.map((category, i) => (

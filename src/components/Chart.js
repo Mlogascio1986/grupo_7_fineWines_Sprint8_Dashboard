@@ -7,11 +7,12 @@ function Chart (){
 
     React.useEffect (()=>{
         // Consulta de productos
-        let url = "https://grupo2-sprint8-api.herokuapp.com/api/products"
+        //let url = "https://grupo2-sprint8-api.herokuapp.com/api/products"
+        let url = 'http://localhost:3030/api/products';
         fetch(url)
         .then(response => response.json())
         .then(data =>{
-            setProducts(data.data)
+            setProducts(data.respuesta.products)
         })
     },[])
 
@@ -23,12 +24,10 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Descripcion</th>
+                                <th>Bodega</th>
+                                <th>Varietal</th>
                                 <th>Precio</th>
                                 <th>Descuento</th>
-                                <th>Categoria</th>
-                                <th>Color</th>
                             </tr>
                         </thead>
                         <tbody>
