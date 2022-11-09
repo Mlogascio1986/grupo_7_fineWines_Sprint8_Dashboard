@@ -6,26 +6,13 @@ function LastProductInDb() {
 
   React.useEffect (()=>{
       //Consulta de productos
-      let lastProductUrl = "https://grupo2-sprint8-api.herokuapp.com/api/products/last"
-        fetch (lastProductUrl)
+      //let lastProductUrl = "https://grupo2-sprint8-api.herokuapp.com/api/products/last"
+      let lastProductUrl = "http://localhost:3030/api/products/last"
+      fetch (lastProductUrl)
         .then(response => response.json())
         .then(data =>{
-            setLastProduct(data.data)
+            setLastProduct(data.product)
         })
-      
-      // let url = "http://localhost:3030/api/products"
-      //   fetch(url)
-      //   .then(response => response.json())
-      //   .then(data =>{
-      //     setDetail(data.data[data.data.length - 1].detail)
-      //   })
-      //   if(detail){
-      // let detailUrl = `http://${detail}` 
-      // fetch(detailUrl)
-      // .then(response => response.json())
-      // .then(data =>{
-      //     setLastProduct(data.data)
-      // })}
   },[])
 
 
@@ -44,14 +31,15 @@ function LastProductInDb() {
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: 40 + "rem" }}
               //src={lastProduct.image}
-              src={`https://grupo2-sprint8-api.herokuapp.com/images/products/${lastProduct?.Images?.[0].path}`}
+              //src={`https://grupo2-sprint8-api.herokuapp.com/images/products/${lastProduct?.Images?.[0].path}`}
+              src={`http://localhost:3030/${lastProduct?.urlImage}`}
               alt="Last Product"
             />
             <p>{lastProduct.description}</p>
             <div className="minor-details">
-              <p>Medidas: {lastProduct.measures}</p>
-              <p>Precio: ${lastProduct.price}</p>
-              {lastProduct.discount > 0 && <p>{lastProduct.discount}% OFF</p>}
+              <p>Bodega: {lastProduct?.Bodega?.nameBodega}</p>  
+              <p>Precio: ${lastProduct?.price}</p>
+              {lastProduct.discount > 0 && <p>{lastProduct.discount*100}% OFF</p>}
             </div>
           </div>
           {/* <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">
