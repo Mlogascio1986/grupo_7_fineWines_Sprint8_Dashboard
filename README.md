@@ -1,6 +1,6 @@
-Heroku:
-https://fwines-sp7-grupo7.herokuapp.com/
+Heroku: https://fwines-sp8-dashboard-grupo7.herokuapp.com/
 
+Github: https://github.com/Mlogascio1986/grupo_7_fineWines_Sprint8_Dashboard.git
 
 Admin portal:
 

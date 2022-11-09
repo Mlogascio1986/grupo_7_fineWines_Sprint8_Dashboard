@@ -12,6 +12,13 @@ Front End
 
 Back End - listo
 
+Apis Heroku:
+https://fwines-sp8-api-grupo7.herokuapp.com/api/products/last - listo
+https://fwines-sp8-api-grupo7.herokuapp.com/api/products/1
+https://fwines-sp8-api-grupo7.herokuapp.com/api/products
+https://fwines-sp8-api-grupo7.herokuapp.com/api/users
+https://fwines-sp8-api-grupo7.herokuapp.com/api/users/1
+
 Apis: 
 
 http://localhost:3030/api/products/last

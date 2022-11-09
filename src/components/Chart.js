@@ -8,7 +8,7 @@ function Chart (){
     React.useEffect (()=>{
         // Consulta de productos
         //let url = "https://grupo2-sprint8-api.herokuapp.com/api/products"
-        let url = 'http://localhost:3030/api/products';
+        let url = 'https://fwines-sp8-api-grupo7.herokuapp.com/api/products';
         fetch(url)
         .then(response => response.json())
         .then(data =>{
