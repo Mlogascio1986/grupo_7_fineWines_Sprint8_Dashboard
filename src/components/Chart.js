@@ -24,6 +24,7 @@ function Chart (){
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
+                                <th>Nombre</th>
                                 <th>Bodega</th>
                                 <th>Varietal</th>
                                 <th>Precio</th>

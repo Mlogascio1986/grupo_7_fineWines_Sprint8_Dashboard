@@ -27,6 +27,7 @@ function ChartRow(props) {
   */
   return (
     <tr>
+      <td>{props.name}</td>
       <td>{props.Bodega?.nameBodega}</td>
       <td>{props.Varietal?.nameVarietal}</td>
       <td>${props.price}</td>
